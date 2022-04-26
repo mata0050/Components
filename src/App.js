@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 // CSS
 import './App.css';
+import Navbar from './components/Navbar';
 import GlobalStyles from './css/Global';
 
 const theme = {
@@ -19,6 +20,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Fragment>
         <GlobalStyles />
+        <Navbar />
       </Fragment>
     </ThemeProvider>
   );
