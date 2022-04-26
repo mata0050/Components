@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { Fragment } from 'react';
+import { ThemeProvider } from 'styled-components';
+
+// CSS
 import './App.css';
+import GlobalStyles from './css/Global';
+
+const theme = {
+  colors: {
+    white: '#fff',
+    black: '#000',
+    darkBlue: '#192D41',
+    blue: '#228BE6',
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Fragment>
+        <GlobalStyles />
+      </Fragment>
+    </ThemeProvider>
   );
 }
 
