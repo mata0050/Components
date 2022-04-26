@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router';
 import './App.css';
 import Navbar from './components/Navbar';
 import GlobalStyles from './css/Global';
+
+// Components
 import Home from './pages/Home';
 import Community from './pages/Community';
 import Features from './pages/Features';
