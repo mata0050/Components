@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { GrMenu, GrClose } from 'react-icons/gr';
@@ -13,9 +13,12 @@ function Navbar() {
 
   const menuIconStyle = {
     fontSize: '2rem',
+    padding: '5px',
     position: 'absolute',
     top: 10,
-    right: 20,
+    right: 25,
+    background: 'white',
+    borderRadius: '5px',
   };
 
   return (
@@ -70,15 +73,22 @@ const StyledNavbar = styled.header`
   position: fixed;
   top: 0;
   right: 0;
-  height: 80px;
+  height: 50px;
   z-index: 2;
+  background-color: ${({ theme }) => theme.colors.black};
+  width: 100%;
 
   .logo {
     display: none;
   }
 
   ul {
-    margin: 50px 30px 0;
+    position: absolute;
+    top: 60px;
+    right: 25px;
+    background-color: ${({ theme }) => theme.colors.black};
+    padding: 20px;
+    border-radius: 10px;
     li {
       list-style: none;
       margin-bottom: 10px;
@@ -87,7 +97,10 @@ const StyledNavbar = styled.header`
       a {
         text-decoration: none;
         font-size: 1.1rem;
-        color: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.white};
+      }
+      &:hover {
+        opacity: 0.6;
       }
     }
   }
