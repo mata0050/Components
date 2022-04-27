@@ -34,7 +34,7 @@ function Navbar() {
       <div className='logo'>
         <Link to='/'>
           <img src={logo} alt='Tesla Logo' />
-          <h4>Telsa</h4>
+          <h4>Tesla</h4>
         </Link>
       </div>
 
@@ -112,7 +112,7 @@ const StyledNavbar = styled.header`
       }
     }
   }
-  
+
   @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
     .mobile-buttons {
       display: none;

@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: absolute;
   top: 80px;
   width: 100%;
+  padding: 60px;
 `;
 
 const GlobalStyles = createGlobalStyle`
