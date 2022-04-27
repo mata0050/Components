@@ -1,4 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const Container = styled.div`
+  position: absolute;
+  top: 80px;
+  width: 100%;
+`;
 
 const GlobalStyles = createGlobalStyle`
 
@@ -18,7 +24,6 @@ const GlobalStyles = createGlobalStyle`
     opacity: 1;
     line-height: 1.5;
   }
-
 
 `;
 

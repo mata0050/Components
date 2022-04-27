@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router';
 // CSS
 import './App.css';
 import Navbar from './components/Navbar';
-import GlobalStyles from './css/Global';
+import GlobalStyles, { Container } from './css/Global';
 
 // Components
 import Home from './pages/Home';
@@ -21,6 +21,10 @@ const theme = {
     darkBlue: '#192D41',
     blue: '#228BE6',
   },
+
+  mobile: {
+    xSmall: '435px',
+  },
 };
 
 function App() {
@@ -29,13 +33,15 @@ function App() {
       <Fragment>
         <GlobalStyles />
         <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/community' element={<Community />} />
-          <Route path='/features' element={<Features />} />
-          <Route path='/learn' element={<Learn />} />
-          <Route path='/pricing' element={<Pricing />} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/community' element={<Community />} />
+            <Route path='/features' element={<Features />} />
+            <Route path='/learn' element={<Learn />} />
+            <Route path='/pricing' element={<Pricing />} />
+          </Routes>
+        </Container>
       </Fragment>
     </ThemeProvider>
   );
