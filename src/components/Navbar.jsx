@@ -23,11 +23,13 @@ function Navbar() {
 
   return (
     <StyledNavbar>
-      {menuState ? (
-        <GrClose style={menuIconStyle} onClick={openMenu} />
-      ) : (
-        <GrMenu style={menuIconStyle} onClick={openMenu} />
-      )}
+      <div className='mobile-buttons'>
+        {menuState ? (
+          <GrClose style={menuIconStyle} onClick={openMenu} />
+        ) : (
+          <GrMenu style={menuIconStyle} onClick={openMenu} />
+        )}
+      </div>
 
       <div className='logo'>
         <Link to='/'>
@@ -36,35 +38,33 @@ function Navbar() {
         </Link>
       </div>
 
-      {menuState && (
-        <ul>
-          <li className='home-link'>
-            <Link to='/' onClick={openMenu}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to='features' onClick={openMenu}>
-              Features
-            </Link>
-          </li>
-          <li>
-            <Link to='pricing' onClick={openMenu}>
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link to='learn' onClick={openMenu}>
-              Learn
-            </Link>
-          </li>
-          <li>
-            <Link to='community' onClick={openMenu}>
-              Community
-            </Link>
-          </li>
-        </ul>
-      )}
+      <ul className={menuState ? 'show' : 'hide'}>
+        <li className='home-link'>
+          <Link to='/' onClick={openMenu}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to='features' onClick={openMenu}>
+            Features
+          </Link>
+        </li>
+        <li>
+          <Link to='pricing' onClick={openMenu}>
+            Pricing
+          </Link>
+        </li>
+        <li>
+          <Link to='learn' onClick={openMenu}>
+            Learn
+          </Link>
+        </li>
+        <li>
+          <Link to='community' onClick={openMenu}>
+            Community
+          </Link>
+        </li>
+      </ul>
     </StyledNavbar>
   );
 }
@@ -80,6 +80,14 @@ const StyledNavbar = styled.header`
 
   .logo {
     display: none;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
   }
 
   ul {
@@ -104,8 +112,53 @@ const StyledNavbar = styled.header`
       }
     }
   }
-  /* @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
-  } */
+  @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
+    .mobile-buttons {
+      display: none;
+    }
+
+    .logo {
+      display: block;
+      padding-top: 10px;
+      margin-left: 20px;
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+          background: white;
+          width: 30px;
+          border-radius: 5px;
+          padding: 2px;
+          margin-right: 10px;
+        }
+
+        h4 {
+          color: ${({ theme }) => theme.colors.white};
+        }
+      }
+    }
+
+    ul {
+      top: 0;
+      background-color: transparent;
+      padding: 0;
+      margin-top: 10px;
+
+      li {
+        margin: 0 10px;
+      }
+    }
+    .hide,
+    .show {
+      display: block;
+      display: flex;
+
+      /* flex-direction: row; */
+    }
+  }
 `;
 
 export default Navbar;

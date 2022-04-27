@@ -23,7 +23,7 @@ const theme = {
   },
 
   mobile: {
-    xSmall: '435px',
+    xSmall: '829px',
   },
 };
 
