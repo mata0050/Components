@@ -9,16 +9,21 @@ import logo from '../image/electric-car.png';
 function Navbar() {
   const [menuState, setMenuState] = useState(false);
 
+  const openMenu = () => setMenuState((prevState) => !prevState);
+
   const menuIconStyle = {
     fontSize: '2rem',
+    position: 'absolute',
+    top: 10,
+    right: 20,
   };
 
   return (
     <StyledNavbar>
       {menuState ? (
-        <GrClose style={menuIconStyle} />
+        <GrClose style={menuIconStyle} onClick={openMenu} />
       ) : (
-        <GrMenu style={menuIconStyle} />
+        <GrMenu style={menuIconStyle} onClick={openMenu} />
       )}
 
       <div className='logo'>
@@ -28,20 +33,35 @@ function Navbar() {
         </Link>
       </div>
 
-      <ul>
-        <li>
-          <Link to='features'>Features</Link>
-        </li>
-        <li>
-          <Link to='pricing'>Pricing</Link>
-        </li>
-        <li>
-          <Link to='learn'>Learn</Link>
-        </li>
-        <li>
-          <Link to='community'>Community</Link>
-        </li>
-      </ul>
+      {menuState && (
+        <ul>
+          <li className='home-link'>
+            <Link to='/' onClick={openMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to='features' onClick={openMenu}>
+              Features
+            </Link>
+          </li>
+          <li>
+            <Link to='pricing' onClick={openMenu}>
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link to='learn' onClick={openMenu}>
+              Learn
+            </Link>
+          </li>
+          <li>
+            <Link to='community' onClick={openMenu}>
+              Community
+            </Link>
+          </li>
+        </ul>
+      )}
     </StyledNavbar>
   );
 }
@@ -57,8 +77,19 @@ const StyledNavbar = styled.header`
     display: none;
   }
 
-  ul{
-    
+  ul {
+    margin: 50px 30px 0;
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: ${({ theme }) => theme.colors.black};
+      }
+    }
   }
   /* @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
   } */
