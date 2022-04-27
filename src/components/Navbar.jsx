@@ -112,6 +112,7 @@ const StyledNavbar = styled.header`
       }
     }
   }
+  
   @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
     .mobile-buttons {
       display: none;
@@ -155,8 +156,6 @@ const StyledNavbar = styled.header`
     .show {
       display: block;
       display: flex;
-
-      /* flex-direction: row; */
     }
   }
 `;
