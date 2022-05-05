@@ -9,23 +9,23 @@ import { CgProfile } from 'react-icons/cg';
 import { FiSettings } from 'react-icons/fi';
 
 function SideNavBar() {
-  const [isShow, setIsShow] = useState({
-    isShowHome: false,
-    isShowDashboard: false,
-    isShowAnalytics: false,
-    isShowCalendar: false,
-    isShowProfile: false,
-    isShowSettings: false,
+  const [show, setShow] = useState({
+    showHome: false,
+    showDashboard: false,
+    showAnalytics: false,
+    showCalendar: false,
+    showProfile: false,
+    showSettings: false,
   });
 
   const {
-    isShowHome,
-    isShowDashboard,
-    isShowAnalytics,
-    isShowCalendar,
-    isShowProfile,
-    isShowSettings,
-  } = isShow;
+    showHome,
+    showDashboard,
+    showAnalytics,
+    showCalendar,
+    showProfile,
+    showSettings,
+  } = show;
 
   const styledIcon = {
     color: '#fff',
@@ -33,10 +33,17 @@ function SideNavBar() {
   };
 
   const handleOnMouseEnter = (showLink) =>
-    setIsShow({ ...isShow, [showLink]: true });
+    setShow({ ...show, [showLink]: true });
 
   const handleOnMouseLeave = (showLink) =>
-    setIsShow({ ...isShow, [showLink]: false });
+    setShow({
+      showHome: false,
+      showDashboard: false,
+      showAnalytics: false,
+      showCalendar: false,
+      showProfile: false,
+      showSettings: false,
+    });
 
   return (
     <StyledSideNavBar>
@@ -44,72 +51,72 @@ function SideNavBar() {
         <li>
           <Link
             to='/'
-            onMouseEnter={() => handleOnMouseEnter('isShowHome')}
-            onMouseLeave={() => handleOnMouseLeave('isShowHome')}
+            onMouseEnter={() => handleOnMouseEnter('showHome')}
+            onMouseLeave={() => handleOnMouseLeave('showHome')}
           >
             <BiHome style={styledIcon} />
 
-            {isShowHome && <span>Home</span>}
+            {showHome && <span>Home</span>}
           </Link>
         </li>
 
         <li>
           <Link
             to='..'
-            onMouseEnter={() => handleOnMouseEnter('isShowDashboard')}
-            onMouseLeave={() => handleOnMouseLeave('isShowDashboard')}
+            onMouseEnter={() => handleOnMouseEnter('showDashboard')}
+            onMouseLeave={() => handleOnMouseLeave('showDashboard')}
           >
             <MdSpaceDashboard style={styledIcon} />
 
-            {isShowDashboard && <span>Dashboard</span>}
+            {showDashboard && <span>Dashboard</span>}
           </Link>
         </li>
 
         <li>
           <Link
             to='..'
-            onMouseEnter={() => handleOnMouseEnter('isShowAnalytics')}
-            onMouseLeave={() => handleOnMouseLeave('isShowAnalytics')}
+            onMouseEnter={() => handleOnMouseEnter('showAnalytics')}
+            onMouseLeave={() => handleOnMouseLeave('showAnalytics')}
           >
             <IoAnalytics style={styledIcon} />
 
-            {isShowAnalytics && <span>Analytics</span>}
+            {showAnalytics && <span>Analytics</span>}
           </Link>
         </li>
 
         <li>
           <Link
             to='..'
-            onMouseEnter={() => handleOnMouseEnter('isShowCalendar')}
-            onMouseLeave={() => handleOnMouseLeave('isShowCalendar')}
+            onMouseEnter={() => handleOnMouseEnter('showCalendar')}
+            onMouseLeave={() => handleOnMouseLeave('showCalendar')}
           >
             <BsFillCalendarCheckFill style={styledIcon} />
 
-            {isShowCalendar && <span>Calendar</span>}
+            {showCalendar && <span>Calendar</span>}
           </Link>
         </li>
 
         <li>
           <Link
             to='..'
-            onMouseEnter={() => handleOnMouseEnter('isShowProfile')}
-            onMouseLeave={() => handleOnMouseLeave('isShowProfile')}
+            onMouseEnter={() => handleOnMouseEnter('showProfile')}
+            onMouseLeave={() => handleOnMouseLeave('showProfile')}
           >
             <CgProfile style={styledIcon} />
 
-            {isShowProfile && <span>Profile</span>}
+            {showProfile && <span>Profile</span>}
           </Link>
         </li>
 
         <li>
           <Link
             to='..'
-            onMouseEnter={() => handleOnMouseEnter('isShowSettings')}
-            onMouseLeave={() => handleOnMouseLeave('isShowSettings')}
+            onMouseEnter={() => handleOnMouseEnter('showSettings')}
+            onMouseLeave={() => handleOnMouseLeave('showSettings')}
           >
             <FiSettings style={styledIcon} />
 
-            {isShowSettings && <span>Settings</span>}
+            {showSettings && <span>Settings</span>}
           </Link>
         </li>
       </ul>
