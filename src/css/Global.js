@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   top: 80px;
+  left: 80px;
   width: 100%;
   padding: 60px;
 `;

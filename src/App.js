@@ -13,6 +13,7 @@ import Community from './pages/Community';
 import Features from './pages/Features';
 import Learn from './pages/Learn';
 import Pricing from './pages/Pricing';
+import SideNavBar from './components/SideNavBar';
 
 const theme = {
   colors: {
@@ -33,6 +34,7 @@ function App() {
       <Fragment>
         <GlobalStyles />
         <Navbar />
+        <SideNavBar />
         <Container>
           <Routes>
             <Route path='/' element={<Home />} />

@@ -7,7 +7,7 @@ function Home() {
     <div>
       <h1>Welcome</h1>
       <Card />
-      <StatsCard />
+      {/* <StatsCard /> */}
 
     </div>
   );
