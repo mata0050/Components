@@ -97,7 +97,7 @@ const StyledFooter = styled.footer`
 
     .inner-footer {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -136,6 +136,31 @@ const StyledFooter = styled.footer`
     font-size: 0.8rem;
     margin-top: 15px;
     display: block;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.large}) {
+    height: 400px;
+    padding: 40px;
+    .footer {
+      flex-direction: column;
+
+      .inner-footer {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.small}) {
+    height: 680px;
+    padding: 40px;
+    .footer {
+      flex-direction: column;
+
+      .inner-footer {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+      }
+    }
   }
 `;
 export default Footer;

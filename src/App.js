@@ -23,11 +23,13 @@ const theme = {
     darkBlue: '#192D41',
     blue: '#228BE6',
     grey: '#25262B',
-    lightGrey: '#85878B'
+    lightGrey: '#85878B',
   },
 
   mobile: {
-    xSmall: '829px',
+    small: '531px',
+    medium: '829px',
+    large: '1134px',
   },
 };
 

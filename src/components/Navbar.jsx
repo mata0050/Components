@@ -73,6 +73,7 @@ const StyledNavbar = styled.header`
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
   height: 50px;
   z-index: 2;
   background-color: ${({ theme }) => theme.colors.black};
@@ -113,7 +114,7 @@ const StyledNavbar = styled.header`
     }
   }
 
-  @media only screen and (min-width: ${({ theme }) => theme.mobile.xSmall}) {
+  @media only screen and (min-width: ${({ theme }) => theme.mobile.medium}) {
     .mobile-buttons {
       display: none;
     }
