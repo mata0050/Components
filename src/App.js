@@ -14,6 +14,7 @@ import Features from './pages/Features';
 import Learn from './pages/Learn';
 import Pricing from './pages/Pricing';
 import SideNavBar from './components/SideNavBar';
+import Footer from './components/Footer';
 
 const theme = {
   colors: {
@@ -21,6 +22,8 @@ const theme = {
     black: '#000',
     darkBlue: '#192D41',
     blue: '#228BE6',
+    grey: '#25262B',
+    lightGrey: '#85878B'
   },
 
   mobile: {
@@ -44,6 +47,7 @@ function App() {
             <Route path='/pricing' element={<Pricing />} />
           </Routes>
         </Container>
+        <Footer />
       </Fragment>
     </ThemeProvider>
   );
