@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { GrMenu, GrClose } from 'react-icons/gr';
 
 // logo
-import logo from '../image/electric-car.png';
+import Logo from './Logo';
 
 function Navbar() {
   const [menuState, setMenuState] = useState(false);
@@ -31,12 +31,7 @@ function Navbar() {
         )}
       </div>
 
-      <div className='logo'>
-        <Link to='/'>
-          <img src={logo} alt='Tesla Logo' />
-          <h4>Tesla</h4>
-        </Link>
-      </div>
+      <Logo />
 
       <ul className={menuState ? 'show' : 'hide'}>
         <li className='home-link'>
@@ -78,6 +73,7 @@ const StyledNavbar = styled.header`
   z-index: 2;
   background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
+  padding-left: 20px;
 
   .logo {
     display: none;
@@ -117,30 +113,6 @@ const StyledNavbar = styled.header`
   @media only screen and (min-width: ${({ theme }) => theme.mobile.medium}) {
     .mobile-buttons {
       display: none;
-    }
-
-    .logo {
-      display: block;
-      padding-top: 10px;
-      margin-left: 20px;
-
-      a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-
-        img {
-          background: white;
-          width: 30px;
-          border-radius: 5px;
-          padding: 2px;
-          margin-right: 10px;
-        }
-
-        h4 {
-          color: ${({ theme }) => theme.colors.white};
-        }
-      }
     }
 
     ul {
