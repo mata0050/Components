@@ -4,8 +4,19 @@ export const Container = styled.div`
   position: absolute;
   top: 80px;
   left: 80px;
-  width: 100%;
+  width: calc(100% - 80px);
   padding: 60px;
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.medium}) {
+    top: 70px;
+    padding: 20px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.xSmall}) {
+    width: 100%;
+    padding: 30px;
+    left: 0;
+  }
 `;
 
 const GlobalStyles = createGlobalStyle`

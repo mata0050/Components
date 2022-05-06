@@ -27,6 +27,7 @@ const theme = {
   },
 
   mobile: {
+    xSmall: '501px',
     small: '531px',
     medium: '829px',
     large: '1134px',

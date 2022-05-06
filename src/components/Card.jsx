@@ -152,6 +152,14 @@ const StyledCard = styled.div`
       background-color: ${({ theme }) => theme.colors.blue};
     }
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.xSmall}) {
+    width: 290px;
+
+    img {
+      width: 265px;
+    }
+  }
 `;
 
 export default Card;

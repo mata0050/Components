@@ -162,5 +162,9 @@ const StyledFooter = styled.footer`
       }
     }
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.xSmall}) {
+    width: 100%;
+  }
 `;
 export default Footer;

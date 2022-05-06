@@ -164,6 +164,10 @@ const StyledSideNavBar = styled.nav`
       z-index: 10;
     }
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile.xSmall}) {
+    display: none;
+  }
 `;
 
 export default SideNavBar;
