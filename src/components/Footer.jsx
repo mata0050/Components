@@ -85,7 +85,7 @@ const StyledFooter = styled.footer`
   width: calc(100vw - 80px);
   height: 300px;
   padding: 40px 100px;
-  background-color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.lightGrey};
 
   .footer {
