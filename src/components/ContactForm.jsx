@@ -195,6 +195,7 @@ const StyledContactForm = styled.div`
           height: 35px;
           border-radius: 5px;
           border: none;
+          color: ${({ theme }) => theme.colors.white};
           background-color: ${({ theme }) => theme.colors.grey};
           padding: 5px;
           font-family: 'Poppins';
