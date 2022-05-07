@@ -18,7 +18,7 @@ function ContactForm() {
   const onChange = (e) => {
     const { value, name } = e.target;
     setFormData((prevState) => ({
-      ...prevState.formData,
+      ...prevState,
       [name]: value,
     }));
   };
