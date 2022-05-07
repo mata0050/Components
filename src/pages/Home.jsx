@@ -1,14 +1,13 @@
 import React from 'react';
 import Card from '../components/Card';
-import StatsCard from '../components/StatsCard';
+import ContactForm from '../components/ContactForm';
 
 function Home() {
   return (
     <div>
       <h1>Welcome</h1>
       <Card />
-      {/* <StatsCard /> */}
-
+      <ContactForm />
     </div>
   );
 }

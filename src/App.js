@@ -16,6 +16,7 @@ import Pricing from './pages/Pricing';
 import SideNavBar from './components/SideNavBar';
 import Footer from './components/Footer';
 
+
 const theme = {
   colors: {
     white: '#fff',
@@ -49,6 +50,7 @@ function App() {
             <Route path='/learn' element={<Learn />} />
             <Route path='/pricing' element={<Pricing />} />
           </Routes>
+  
         </Container>
         <Footer />
       </Fragment>
